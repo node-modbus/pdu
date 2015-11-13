@@ -5,58 +5,58 @@ describe("Exceptions", function () {
 	it("should allow alls functions and codes", function () {
 		assert.deepEqual(
 			new Buffer([ 0x81, 0x01 ]),
-			Help.modbus.readCoils.exception.build(Help.modbus.Exceptions.ILLEGAL_FUNCTION)
+			Help.modbus.ReadCoils.Exception.build(Help.modbus.Exception.IllegalFunction)
 		);
 		assert.deepEqual(
 			new Buffer([ 0x82, 0x02 ]),
-			Help.modbus.readDiscreteInputs.exception.build(Help.modbus.Exceptions.ILLEGAL_DATA_ADDRESS)
+			Help.modbus.ReadDiscreteInputs.Exception.build(Help.modbus.Exception.IllegalDataAddress)
 		);
 		assert.deepEqual(
 			new Buffer([ 0x94, 0x03 ]),
-			Help.modbus.readFileRecord.exception.build(Help.modbus.Exceptions.ILLEGAL_DATA_VALUE)
+			Help.modbus.ReadFileRecord.Exception.build(Help.modbus.Exception.IllegalDataValue)
 		);
 		assert.deepEqual(
 			new Buffer([ 0x83, 0x04 ]),
-			Help.modbus.readHoldingRegisters.exception.build(Help.modbus.Exceptions.SLAVE_DEVICE_FAILURE)
+			Help.modbus.ReadHoldingRegisters.Exception.build(Help.modbus.Exception.SlaveDeviceFailure)
 		);
 		assert.deepEqual(
 			new Buffer([ 0x84, 0x05 ]),
-			Help.modbus.readInputRegisters.exception.build(Help.modbus.Exceptions.ACKNOWLEDGE)
+			Help.modbus.ReadInputRegisters.Exception.build(Help.modbus.Exception.Aknowledge)
 		);
 		assert.deepEqual(
 			new Buffer([ 0x95, 0x06 ]),
-			Help.modbus.writeFileRecord.exception.build(Help.modbus.Exceptions.SLAVE_DEVICE_BUSY)
+			Help.modbus.WriteFileRecord.Exception.build(Help.modbus.Exception.SlaveDeviceBusy)
 		);
 		assert.deepEqual(
 			new Buffer([ 0x8F, 0x07 ]),
-			Help.modbus.writeMultipleCoils.exception.build(Help.modbus.Exceptions.NEGATIVE_ACKNOWLEDGE)
+			Help.modbus.WriteMultipleCoils.Exception.build(Help.modbus.Exception.NegativeAknowledge)
 		);
 		assert.deepEqual(
 			new Buffer([ 0x90, 0x08 ]),
-			Help.modbus.writeMultipleRegisters.exception.build(Help.modbus.Exceptions.MEMORY_PARITY_ERROR)
+			Help.modbus.WriteMultipleRegisters.Exception.build(Help.modbus.Exception.MemoryParityError)
 		);
 		assert.deepEqual(
 			new Buffer([ 0x85, 0x0A ]),
-			Help.modbus.writeSingleCoil.exception.build(Help.modbus.Exceptions.GATEWAY_PATH_UNAVAILABLE)
+			Help.modbus.WriteSingleCoil.Exception.build(Help.modbus.Exception.GatewayPathUnavailable)
 		);
 		assert.deepEqual(
 			new Buffer([ 0x86, 0x0B ]),
-			Help.modbus.writeSingleRegister.exception.build(Help.modbus.Exceptions.GATEWAY_TARGET_DEVICE_FAILED_TO_RESPOND)
+			Help.modbus.WriteSingleRegister.Exception.build(Help.modbus.Exception.GatewayTargetDeviceFailedToRespond)
 		);
 	});
 
 	it("should parse buffers with function code and exception", function () {
 		assert.deepEqual(
-			{ code: "readCoils", exception: "ILLEGAL_FUNCTION" },
-			Help.modbus.Exceptions.parse(new Buffer([ 0x81, 0x01 ]))
+			{ code: "ReadCoils", exception: "IllegalFunction" },
+			Help.modbus.Exception.parse(new Buffer([ 0x81, 0x01 ]))
 		);
 		assert.deepEqual(
-			{ code: "writeSingleCoil", exception: "SLAVE_DEVICE_FAILURE" },
-			Help.modbus.Exceptions.parse(new Buffer([ 0x85, 0x04 ]))
+			{ code: "WriteSingleCoil", exception: "SlaveDeviceFailure" },
+			Help.modbus.Exception.parse(new Buffer([ 0x85, 0x04 ]))
 		);
 		assert.deepEqual(
-			{ code: "writeFileRecord", exception: "GATEWAY_TARGET_DEVICE_FAILED_TO_RESPOND" },
-			Help.modbus.Exceptions.parse(new Buffer([ 0x95, 0x0B ]))
+			{ code: "WriteFileRecord", exception: "GatewayTargetDeviceFailedToRespond" },
+			Help.modbus.Exception.parse(new Buffer([ 0x95, 0x0B ]))
 		);
 	});
 });

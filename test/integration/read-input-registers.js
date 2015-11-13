@@ -10,14 +10,14 @@ describe("Read Input Registers", function () {
 
 			assert.deepEqual(
 				{ start : start, end : end },
-				Help.modbus.readInputRegisters.request.parse(
-					Help.modbus.readInputRegisters.request.build(start, end)
+				Help.modbus.ReadInputRegisters.Request.parse(
+					Help.modbus.ReadInputRegisters.Request.build(start, end)
 				)
 			);
 			assert.deepEqual(
 				blocks,
-				Help.modbus.readInputRegisters.response.parse(
-					Help.modbus.readInputRegisters.response.build(blocks)
+				Help.modbus.ReadInputRegisters.Response.parse(
+					Help.modbus.ReadInputRegisters.Response.build(blocks)
 				)
 			);
 		}

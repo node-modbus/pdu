@@ -10,14 +10,14 @@ describe("Read Coils", function () {
 
 			assert.deepEqual(
 				{ start : start, end : end },
-				Help.modbus.readCoils.request.parse(
-					Help.modbus.readCoils.request.build(start, end)
+				Help.modbus.ReadCoils.Request.parse(
+					Help.modbus.ReadCoils.Request.build(start, end)
 				)
 			);
 			assert.deepEqual(
 				bits,
-				Help.modbus.readCoils.response.parse(
-					Help.modbus.readCoils.response.build(bits)
+				Help.modbus.ReadCoils.Response.parse(
+					Help.modbus.ReadCoils.Response.build(bits)
 				)
 			);
 		}
