@@ -11,13 +11,13 @@ describe("Read Discrete Inputs", function () {
 			assert.deepEqual(
 				{ start : start, end : end },
 				Help.modbus.readDiscreteInputs.request.parse(
-					Help.modbus.readDiscreteInputs.request.build(start, end).slice(1)
+					Help.modbus.readDiscreteInputs.request.build(start, end)
 				)
 			);
 			assert.deepEqual(
 				bits,
 				Help.modbus.readDiscreteInputs.response.parse(
-					Help.modbus.readDiscreteInputs.response.build(bits).slice(1)
+					Help.modbus.readDiscreteInputs.response.build(bits)
 				)
 			);
 		}

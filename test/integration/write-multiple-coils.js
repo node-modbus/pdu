@@ -11,13 +11,13 @@ describe("Write Multiple Coils", function () {
 			assert.deepEqual(
 				{ start : start, end : end, values : bits },
 				Help.modbus.writeMultipleCoils.request.parse(
-					Help.modbus.writeMultipleCoils.request.build(start, end, bits).slice(1)
+					Help.modbus.writeMultipleCoils.request.build(start, end, bits)
 				)
 			);
 			assert.deepEqual(
 				{ start : start, end : end },
 				Help.modbus.writeMultipleCoils.response.parse(
-					Help.modbus.writeMultipleCoils.response.build(start, end).slice(1)
+					Help.modbus.writeMultipleCoils.response.build(start, end)
 				)
 			);
 		}

@@ -10,13 +10,13 @@ describe("Write Single Coil", function () {
 			assert.deepEqual(
 				{ address : address, value : value },
 				Help.modbus.writeSingleCoil.request.parse(
-					Help.modbus.writeSingleCoil.request.build(address, value).slice(1)
+					Help.modbus.writeSingleCoil.request.build(address, value)
 				)
 			);
 			assert.deepEqual(
 				{ address : address, value : value },
 				Help.modbus.writeSingleCoil.response.parse(
-					Help.modbus.writeSingleCoil.response.build(address, value).slice(1)
+					Help.modbus.writeSingleCoil.response.build(address, value)
 				)
 			);
 		}

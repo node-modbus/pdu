@@ -22,13 +22,13 @@ describe("Read File Record", function () {
 			assert.deepEqual(
 				req,
 				Help.modbus.readFileRecord.request.parse(
-					Help.modbus.readFileRecord.request.build(req).slice(1)
+					Help.modbus.readFileRecord.request.build(req)
 				)
 			);
 			assert.deepEqual(
 				res,
 				Help.modbus.readFileRecord.response.parse(
-					Help.modbus.readFileRecord.response.build(res).slice(1)
+					Help.modbus.readFileRecord.response.build(res)
 				)
 			);
 		}

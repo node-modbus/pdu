@@ -10,13 +10,13 @@ describe("Write Single Register", function () {
 			assert.deepEqual(
 				{ address : address, value : value },
 				Help.modbus.writeSingleRegister.request.parse(
-					Help.modbus.writeSingleRegister.request.build(address, value).slice(1)
+					Help.modbus.writeSingleRegister.request.build(address, value)
 				)
 			);
 			assert.deepEqual(
 				{ address : address, value : value },
 				Help.modbus.writeSingleRegister.response.parse(
-					Help.modbus.writeSingleRegister.response.build(address, value).slice(1)
+					Help.modbus.writeSingleRegister.response.build(address, value)
 				)
 			);
 		}

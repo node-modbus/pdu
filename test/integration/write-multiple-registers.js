@@ -11,13 +11,13 @@ describe("Write Multiple Registers", function () {
 			assert.deepEqual(
 				{ start : start, end : end, values : blocks },
 				Help.modbus.writeMultipleRegisters.request.parse(
-					Help.modbus.writeMultipleRegisters.request.build(start, end, blocks).slice(1)
+					Help.modbus.writeMultipleRegisters.request.build(start, end, blocks)
 				)
 			);
 			assert.deepEqual(
 				{ start : start, end : end },
 				Help.modbus.writeMultipleRegisters.response.parse(
-					Help.modbus.writeMultipleRegisters.response.build(start, end).slice(1)
+					Help.modbus.writeMultipleRegisters.response.build(start, end)
 				)
 			);
 		}

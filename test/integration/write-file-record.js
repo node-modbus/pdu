@@ -29,13 +29,13 @@ describe("Write File Record", function () {
 			assert.deepEqual(
 				req,
 				Help.modbus.writeFileRecord.request.parse(
-					Help.modbus.writeFileRecord.request.build(req).slice(1)
+					Help.modbus.writeFileRecord.request.build(req)
 				)
 			);
 			assert.deepEqual(
 				res,
 				Help.modbus.writeFileRecord.response.parse(
-					Help.modbus.writeFileRecord.response.build(res).slice(1)
+					Help.modbus.writeFileRecord.response.build(res)
 				)
 			);
 		}
