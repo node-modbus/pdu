@@ -6,13 +6,13 @@ describe("Read Input Registers", function () {
 		for (var i = 0; i < Help.trials; i++) {
 			var start = Math.round(Math.random() * 100);
 			var end   = start + Math.round(Math.random() * 100);
-			var buf1  = Help.modbus.readInputRegisters.request(start, end);
+			var buf1  = Help.modbus.readInputRegisters.request.build(start, end);
 			var buf2  = Help.startEndAddress(Help.modbus.readInputRegisters.code, start, end);
 			var bits  = Help.randomBlockList(end - start + 1, 2);
-			var buf3  = Help.modbus.readInputRegisters.response(bits);
+			var buf3  = Help.modbus.readInputRegisters.response.build(bits);
 
 			assert.deepEqual(buf1, buf2);
-			assert.deepEqual(bits, Help.modbus.readInputRegisters.parse(buf3.slice(1)));
+			assert.deepEqual(bits, Help.modbus.readInputRegisters.response.parse(buf3.slice(1)));
 		}
 	});
 });
