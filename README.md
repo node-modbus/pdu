@@ -48,6 +48,7 @@ console.log(Modbus.Response(new Buffer([ 0x01, 0x01, 0xad ])));
 - `15` WriteFileRecord
 - `16` MaskWriteRegister
 - `18` ReadFIFOQueue
+- `2B/0E` ReadDeviceIdentification
 
 ### Exceptions
 
