@@ -46,6 +46,7 @@ console.log(Modbus.Response(new Buffer([ 0x01, 0x01, 0xad ])));
 - `10` WriteMultipleRegisters
 - `14` ReadFileRecord
 - `15` WriteFileRecord
+- `16` MaskWriteRegister
 
 ### Exceptions
 
