@@ -12,7 +12,7 @@ This is a generic module to create all the modbus PDU message types. You should 
 npm i modbus-pdu
 ```
 
-### Usage
+### Examples
 
 ```js
 var Modbus = require("modbus-pdu");
@@ -36,19 +36,19 @@ console.log(Modbus.Response(new Buffer([ 0x01, 0x01, 0xad ])));
 
 ### Function Codes
 
-- `01` ReadCoils
-- `02` ReadDiscreteInputs
-- `03` ReadHoldingRegisters
-- `04` ReadInputRegisters
-- `05` WriteSingleCoil
-- `06` WriteSingleRegister
-- `0F` WriteMultipleCoils
-- `10` WriteMultipleRegisters
-- `14` ReadFileRecord
-- `15` WriteFileRecord
-- `16` MaskWriteRegister
-- `18` ReadFIFOQueue
-- `2B/0E` ReadDeviceIdentification
+- `01` ReadCoils(`start`, `end`)
+- `02` ReadDiscreteInputs(`start`, `end`)
+- `03` ReadHoldingRegisters(`start`, `end`)
+- `04` ReadInputRegisters(`start`, `end`)
+- `05` WriteSingleCoil(`address`, `value`)
+- `06` WriteSingleRegister(`address`, `value`)
+- `0F` WriteMultipleCoils(`start`, `end`, `values`) // `values` should be Array of `1`/`0`
+- `10` WriteMultipleRegisters(`start`, `end`, `values`) // `values` should be Array of 2-size Buffers
+- `14` ReadFileRecord(`requests`) // `requests` should be Array of objects with keys `file`, `start` and `end`
+- `15` WriteFileRecord(`requests`) // `requests` shuold be Array of objects with keys `file`, `start`, `end` and `values` (Array of 2-size Buffers)
+- `16` MaskWriteRegister(`address`, `andmask`, `ormask`)
+- `18` ReadFIFOQueue(`address`)
+- `2B/0E` ReadDeviceIdentification(`code`, `id`)
 
 ### Exceptions
 
