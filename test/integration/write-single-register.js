@@ -4,14 +4,21 @@ var Help   = require("../help");
 describe("Write Single Register", function () {
 	it("should be [ address, block ] => [ address, block ]", function () {
 		for (var i = 0; i < Help.trials; i++) {
-			var addr  = Math.round(Math.random() * 100);
-			var block = Help.randomBlock(2);
-			var buf1  = Help.modbus.writeSingleRegister.request.build(addr, block);
-			var buf2  = Help.addressValue(Help.modbus.writeSingleRegister.code, addr, [ block ]);
-			var buf3  = Help.modbus.writeSingleRegister.response.build(addr, block);
+			var address = Math.round(Math.random() * 100);
+			var value   = Help.randomBlock(2);
 
-			assert.deepEqual(buf1, buf2);
-			assert.deepEqual({ address : addr, value : block }, Help.modbus.writeSingleRegister.response.parse(buf3.slice(1)));
+			assert.deepEqual(
+				{ address : address, value : value },
+				Help.modbus.writeSingleRegister.request.parse(
+					Help.modbus.writeSingleRegister.request.build(address, value).slice(1)
+				)
+			);
+			assert.deepEqual(
+				{ address : address, value : value },
+				Help.modbus.writeSingleRegister.response.parse(
+					Help.modbus.writeSingleRegister.response.build(address, value).slice(1)
+				)
+			);
 		}
 	});
 });

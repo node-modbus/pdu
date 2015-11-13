@@ -6,13 +6,20 @@ describe("Read Discrete Inputs", function () {
 		for (var i = 0; i < Help.trials; i++) {
 			var start = Math.round(Math.random() * 100);
 			var end   = start + Math.round(Math.random() * 100);
-			var buf1  = Help.modbus.readDiscreteInputs.request.build(start, end);
-			var buf2  = Help.startEndAddress(Help.modbus.readDiscreteInputs.code, start, end);
 			var bits  = Help.randomBitList(end - start + 1);
-			var buf3  = Help.modbus.readDiscreteInputs.response.build(bits);
 
-			assert.deepEqual(buf1, buf2);
-			assert.deepEqual(bits, Help.modbus.readDiscreteInputs.response.parse(buf3.slice(1)));
+			assert.deepEqual(
+				{ start : start, end : end },
+				Help.modbus.readDiscreteInputs.request.parse(
+					Help.modbus.readDiscreteInputs.request.build(start, end).slice(1)
+				)
+			);
+			assert.deepEqual(
+				bits,
+				Help.modbus.readDiscreteInputs.response.parse(
+					Help.modbus.readDiscreteInputs.response.build(bits).slice(1)
+				)
+			);
 		}
 	});
 });
