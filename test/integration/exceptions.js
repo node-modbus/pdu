@@ -17,7 +17,7 @@ describe("Exceptions", function () {
 		);
 		assert.deepEqual(
 			new Buffer([ 0x83, 0x04 ]),
-			Help.modbus.ReadHoldingRegisters.Exception.build(Help.modbus.Exception.SlaveDeviceFailure)
+			Help.modbus.ReadHoldingRegisters.Exception.build(Help.modbus.Exception.ServerDeviceFailure)
 		);
 		assert.deepEqual(
 			new Buffer([ 0x84, 0x05 ]),
@@ -25,11 +25,7 @@ describe("Exceptions", function () {
 		);
 		assert.deepEqual(
 			new Buffer([ 0x95, 0x06 ]),
-			Help.modbus.WriteFileRecord.Exception.build(Help.modbus.Exception.SlaveDeviceBusy)
-		);
-		assert.deepEqual(
-			new Buffer([ 0x8F, 0x07 ]),
-			Help.modbus.WriteMultipleCoils.Exception.build(Help.modbus.Exception.NegativeAknowledge)
+			Help.modbus.WriteFileRecord.Exception.build(Help.modbus.Exception.ServerDeviceBusy)
 		);
 		assert.deepEqual(
 			new Buffer([ 0x90, 0x08 ]),
@@ -51,7 +47,7 @@ describe("Exceptions", function () {
 			Help.modbus.Exception.parse(new Buffer([ 0x81, 0x01 ]))
 		);
 		assert.deepEqual(
-			{ code: "WriteSingleCoil", exception: "SlaveDeviceFailure" },
+			{ code: "WriteSingleCoil", exception: "ServerDeviceFailure" },
 			Help.modbus.Exception.parse(new Buffer([ 0x85, 0x04 ]))
 		);
 		assert.deepEqual(
