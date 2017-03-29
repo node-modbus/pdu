@@ -4,20 +4,19 @@ var Help   = require("../help");
 describe("Write Multiple Registers", function () {
 	it("should be [ start, end, blocks ] => [ start, end ]", function () {
 		for (var i = 0; i < Help.trials; i++) {
-			var start  = Math.round(Math.random() * 100);
-			var end    = start + 10 - 1;
-			var blocks = Help.randomBlockList(5, 2);
+			var address = Math.round(Math.random() * 100);
+			var blocks  = Help.randomBlockList(5, 2);
 
 			assert.deepEqual(
-				{ start : start, end : end, values : blocks },
+				{ address : address, quantity : blocks.length, values : blocks },
 				Help.modbus.WriteMultipleRegisters.Request.parse(
-					Help.modbus.WriteMultipleRegisters.Request.build(start, end, blocks)
+					Help.modbus.WriteMultipleRegisters.Request.build(address, blocks)
 				)
 			);
 			assert.deepEqual(
-				{ start : start, end : end },
+				{ address : address, quantity : blocks.length },
 				Help.modbus.WriteMultipleRegisters.Response.parse(
-					Help.modbus.WriteMultipleRegisters.Response.build(start, end)
+					Help.modbus.WriteMultipleRegisters.Response.build(address, blocks.length)
 				)
 			);
 		}

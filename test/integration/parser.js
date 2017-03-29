@@ -10,7 +10,7 @@ describe("Generic parser", function () {
 
 		assert.deepEqual(
 			Help.modbus.Request(new Buffer([ 0x0F, 0x00, 0x13, 0x00, 0x0A, 0x02, 0xCD, 0x01 ])),
-			{ code: "WriteMultipleCoils", start: 19, end: 28, values: [ 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0 ] }
+			{ code: "WriteMultipleCoils", address: 19, quantity: 10, values: [ 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0 ] }
 		);
 	});
 
