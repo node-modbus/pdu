@@ -5,7 +5,7 @@ describe("Generic parser", function () {
 	it("should support requests", function () {
 		assert.deepEqual(
 			Help.modbus.Request(new Buffer([ 0x01, 0x00, 0x0a, 0x00, 0x40 ])),
-			{ code: "ReadCoils", start: 10, end: 73 }
+			{ code: "ReadCoils", address: 10, quantity: 64 }
 		);
 
 		assert.deepEqual(
