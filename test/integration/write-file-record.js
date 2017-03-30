@@ -2,27 +2,24 @@ var assert = require("assert");
 var Help   = require("../help");
 
 describe("Write File Record", function () {
-	it("should be [{ file, start, end }, ..] => [ data, .. ]", function () {
+	it("should be [{ file, address }, ..] => [ data, .. ]", function () {
 		for (var i = 0; i < Help.trials; i++) {
 			var req = [];
 			var res = [];
 
 			for (var j = 0; j < 10; j++) {
-				var start = Math.round(Math.random() * 10);
-				var end   = start + 10 - 1;
+				var address = Math.round(Math.random() * 10);
 
 				req.push({
-					file   : Math.round(Math.random() * 10),
-					start  : start,
-					end    : end,
-					values : Help.randomBlockList(5, 2)
+					file    : Math.round(Math.random() * 10),
+					address : address,
+					values  : Help.randomBlockList(5, 2)
 				});
 
 				res.push({
-					file   : Math.round(Math.random() * 10),
-					start  : start,
-					end    : end,
-					values : Help.randomBlockList(5, 2)
+					file    : Math.round(Math.random() * 10),
+					address : address,
+					values  : Help.randomBlockList(5, 2)
 				});
 			}
 
