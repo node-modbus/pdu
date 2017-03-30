@@ -2,18 +2,18 @@ var assert = require("assert");
 var Help   = require("../help");
 
 describe("Read File Record", function () {
-	it("should be [{ file, start, end }, ..] => [ data, .. ]", function () {
+	it("should be [{ file, address, length }, ..] => [ data, .. ]", function () {
 		for (var i = 0; i < Help.trials; i++) {
 			var req = [];
 			var res = [];
 
 			for (var j = 0; j < 10; j++) {
-				var start = Math.round(Math.random() * 10);
+				var address = Math.round(Math.random() * 10);
 
 				req.push({
-					file   : Math.round(Math.random() * 10),
-					start  : start,
-					length : Math.round(Math.random() * 10)
+					file    : Math.round(Math.random() * 10),
+					address : address,
+					length  : Math.round(Math.random() * 10)
 				});
 
 				res.push(Help.randomBlockList(5, 2));
