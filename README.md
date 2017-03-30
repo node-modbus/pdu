@@ -42,6 +42,7 @@ console.log(Modbus.Response(new Buffer([ 0x01, 0x01, 0xad ])));
 - `04` ReadInputRegisters(`start`, `end`)
 - `05` WriteSingleCoil(`address`, `value`)
 - `06` WriteSingleRegister(`address`, `value`)
+- `07` ReadExceptionStatus()
 - `0F` WriteMultipleCoils(`start`, `end`, `values`) // `values` should be Array of `1`/`0`
 - `10` WriteMultipleRegisters(`start`, `end`, `values`) // `values` should be Array of 2-size Buffers
 - `14` ReadFileRecord(`requests`) // `requests` should be Array of objects with keys `file`, `start` and `end`
@@ -55,10 +56,9 @@ console.log(Modbus.Response(new Buffer([ 0x01, 0x01, 0xad ])));
 - `01` IllegalFunction
 - `02` IllegalDataAddress
 - `03` IllegalDataValue
-- `04` SlaveDeviceFailure
-- `05` SlaveDeviceBusy
+- `04` ServerDeviceFailure
+- `05` ServerDeviceBusy
 - `06` Aknowledge
-- `07` NegativeAknowledge
 - `08` MemoryParityError
 - `0A` GatewayPathUnavailable
 - `0B` GatewayTargetDeviceFailedToRespond
