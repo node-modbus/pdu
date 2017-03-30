@@ -11,9 +11,9 @@ describe("Read File Record", function () {
 				var start = Math.round(Math.random() * 10);
 
 				req.push({
-					file  : Math.round(Math.random() * 10),
-					start : start,
-					end   : start + Math.round(Math.random() * 10)
+					file   : Math.round(Math.random() * 10),
+					start  : start,
+					length : Math.round(Math.random() * 10)
 				});
 
 				res.push(Help.randomBlockList(5, 2));
