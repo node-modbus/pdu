@@ -10,13 +10,13 @@ describe("Read Write Multiple Registers", function () {
 			var values        = Help.randomBlockList(read_quantity, 2);
 
 			assert.deepEqual(
-				{ read_address, read_quantity, write_address, values },
+				{ read_address: read_address, read_quantity: read_quantity, write_address: write_address, values: values },
 				Help.modbus.ReadWriteMultipleRegisters.Request.parse(
 					Help.modbus.ReadWriteMultipleRegisters.Request.build(read_address, read_quantity, write_address, values)
 				)
 			);
 			assert.deepEqual(
-				{ values },
+				{ values: values },
 				Help.modbus.ReadWriteMultipleRegisters.Response.parse(
 					Help.modbus.ReadWriteMultipleRegisters.Response.build(values)
 				)

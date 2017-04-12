@@ -13,7 +13,7 @@ describe("Read Exception Status", function () {
 				)
 			);
 			assert.deepEqual(
-				{ data },
+				{ data: data },
 				Help.modbus.ReadExceptionStatus.Response.parse(
 					Help.modbus.ReadExceptionStatus.Response.build(data)
 				)

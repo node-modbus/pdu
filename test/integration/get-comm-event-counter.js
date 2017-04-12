@@ -14,7 +14,7 @@ describe("Get Comm Event Counter", function () {
 				)
 			);
 			assert.deepEqual(
-				{ status, event_count },
+				{ status: status, event_count: event_count },
 				Help.modbus.GetCommEventCounter.Response.parse(
 					Help.modbus.GetCommEventCounter.Response.build(status, event_count)
 				)
