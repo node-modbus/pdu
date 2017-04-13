@@ -1,3 +1,7 @@
+## 1.6.0 - 13 Apr 2017
+
+- return null on invalid data instead of throwing
+
 ## 1.5.1 - 13 Apr 2017
 
 - buffer:
