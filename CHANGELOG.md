@@ -1,3 +1,10 @@
+## 1.7.0 - 13 Apr 2017
+
+- READ_FIFO_QUEUE:
+  - fixes not checking response size
+- GET_COMM_EVENT_LOG:
+  - fixes minimum response size
+
 ## 1.6.0 - 13 Apr 2017
 
 - return null on invalid data instead of throwing

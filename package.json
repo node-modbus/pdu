@@ -1,7 +1,7 @@
 {
 	"name"            : "modbus-pdu",
 	"description"     : "Modbus base PDU",
-	"version"         : "1.6.0",
+	"version"         : "1.7.0",
 	"author"          : "Diogo Resende <dresende@thinkdigital.pt>",
 	"license"         : "MIT",
 	"main"            : "lib/Modbus.js",
