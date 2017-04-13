@@ -1,3 +1,10 @@
+## 1.5.1 - 13 Apr 2017
+
+- buffer:
+    - renames Utils to Buffer
+- ci:
+    - fixes travis file
+
 ## 1.5.0 - 13 Apr 2017
 
 - adds support for at least node 0.10
