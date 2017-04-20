@@ -1,3 +1,8 @@
+## 1.8.0 - 20 Apr 2017
+
+- modbus:
+    - do not throw error on unknown function, return object with code and data
+
 ## 1.7.0 - 13 Apr 2017
 
 - READ_FIFO_QUEUE:
