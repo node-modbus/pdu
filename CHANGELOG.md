@@ -1,7 +1,12 @@
+## 1.8.1 - 27 Apr 2017
+
+- read-write-multiple-registers:
+  - fixes minimum buffer length required for requests'
+
 ## 1.8.0 - 20 Apr 2017
 
 - modbus:
-    - do not throw error on unknown function, return object with code and data
+  - do not throw error on unknown function, return object with code and data
 
 ## 1.7.0 - 13 Apr 2017
 
