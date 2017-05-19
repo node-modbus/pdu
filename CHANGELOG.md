@@ -1,3 +1,7 @@
+## 1.8.2 - 19 May 2017
+
+- fixes buffer not being correctly converted to bits
+
 ## 1.8.1 - 27 Apr 2017
 
 - read-write-multiple-registers:
