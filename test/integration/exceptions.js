@@ -55,4 +55,37 @@ describe("Exceptions", function () {
 			Help.modbus.Exception.parse(new Buffer([ 0x95, 0x0B ]))
 		);
 	});
+
+	it("should support creating errors using just the string code", function () {
+		assert.equal(
+			Help.modbus.Exception.error("MemoryParityError").code,
+			0x08
+		);
+		assert.equal(
+			Help.modbus.Exception.error("GatewayPathUnavailable").code,
+			0x0A
+		);
+	});
+
+	it("should support creating errors using just the numeric code", function () {
+		assert.equal(
+			Help.modbus.Exception.error(0x08).message,
+			"MemoryParityError"
+		);
+		assert.equal(
+			Help.modbus.Exception.error(0x0A).message,
+			"GatewayPathUnavailable"
+		);
+	});
+
+	it("should support creating errors using an unknown code", function () {
+		var err1 = Help.modbus.Exception.error(0xFA);
+		var err2 = Help.modbus.Exception.error("An Error");
+
+		assert.equal(err1.message, "250"); // 0xFA = 250
+		assert.equal(err1.code, undefined);
+
+		assert.equal(err2.message, "An Error");
+		assert.equal(err2.code, undefined);
+	});
 });

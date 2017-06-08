@@ -67,3 +67,13 @@ console.log(Modbus.Response(new Buffer([ 0x01, 0x01, 0xad ])));
 - `08` MemoryParityError
 - `0A` GatewayPathUnavailable
 - `0B` GatewayTargetDeviceFailedToRespond
+
+You can create an `Error` object with code and message using the following code:
+
+```js
+var err = Modbus.Exceptions.error("GatewayPathUnavailable");
+console.log(err.code); // 10 (0x0A)
+console.log(err.message); // "GatewayPathUnavailable"
+```
+
+You can use this error directly when replying to requests using the [modbus-stream](https://github.com/dresende/node-modbus-stream) module.
