@@ -1,3 +1,12 @@
+## 1.8.3 - 8 Jun 2017
+
+- exceptions:
+  - adds a helper function .error()
+- test:
+  - add node v8
+- deps:
+  - mocha@3.4.2
+
 ## 1.8.2 - 19 May 2017
 
 - fixes buffer not being correctly converted to bits
