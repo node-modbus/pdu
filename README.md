@@ -6,7 +6,7 @@
 
 This is a generic module to create all the modbus PDU message types. You should then use another abstraction to TCP, RTU and ASCII.
 
-You should not use this directly, use [modbus-stream](https://github.com/node-modbus/stream) instead.
+You should not use this directly, use [stream](https://github.com/node-modbus/stream) instead.
 
 ### Install
 
