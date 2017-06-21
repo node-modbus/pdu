@@ -5,7 +5,7 @@ describe("Read Input Registers", function () {
 	it("should be [ address, quantity ] => [ buffer block, buffer block, .. ]", function () {
 		for (var i = 0; i < Help.trials; i++) {
 			var address = Math.round(Math.random() * 100);
-			var blocks  = Help.randomBlockList(10 + Math.round(Math.random() * 10), 2);
+			var blocks  = Help.randomBlockList(10 + Math.round(Math.random() * 500), 2);
 
 			assert.deepEqual(
 				{ address : address, quantity : blocks.length },
@@ -13,12 +13,22 @@ describe("Read Input Registers", function () {
 					Help.modbus.ReadInputRegisters.Request.build(address, blocks.length)
 				)
 			);
-			assert.deepEqual(
-				blocks,
-				Help.modbus.ReadInputRegisters.Response.parse(
-					Help.modbus.ReadInputRegisters.Response.build(blocks)
-				)
-			);
+
+			if (blocks.length > 127) {
+				assert.throws(
+					function () {
+						Help.modbus.ReadInputRegisters.Response.build(blocks)
+					},
+					/out of bounds/
+				);
+			} else {
+				assert.deepEqual(
+					blocks,
+					Help.modbus.ReadInputRegisters.Response.parse(
+						Help.modbus.ReadInputRegisters.Response.build(blocks)
+					)
+				);
+			}
 		}
 	});
 });
