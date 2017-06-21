@@ -1,3 +1,12 @@
+## 1.8.4 - 21 Jun 2017
+
+- helpers:
+  - exposes some helpers
+  - fixes blocksToBuffer when a block has length < 2
+- test:
+  - adds check for out of bounds response sizes
+  - ensures read-file-record and write-file-record throw when reaching length limits
+
 ## 1.8.3 - 8 Jun 2017
 
 - exceptions:
