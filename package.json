@@ -5,7 +5,7 @@
 	"author"          : "Diogo Resende <dresende@thinkdigital.pt>",
 	"license"         : "MIT",
 	"main"            : "lib/Modbus.js",
-	"repository"      : "http://github.com/dresende/node-modbus-pdu.git",
+	"repository"      : "http://github.com/node-modbus/pdu.git",
 	"keywords"        : [ "modbus", "pdu", "exception" ],
 	"scripts"         : { "test": "node test/run" },
 	"devDependencies" : {
