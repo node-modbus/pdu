@@ -1,3 +1,7 @@
+## 1.9.0 - 23 Jun 2017
+
+- fixes function code for read-write-multiple-registers :(
+
 ## 1.8.4 - 21 Jun 2017
 
 - helpers:
@@ -57,5 +61,5 @@
 - modbus:
     - adds a custom package builder
     - do not throw error on unknown function, return object with code and data
-- exception: 
+- exception:
     - allow one to build an exception specifying fcode and error code
