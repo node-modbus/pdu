@@ -76,4 +76,4 @@ console.log(err.code); // 10 (0x0A)
 console.log(err.message); // "GatewayPathUnavailable"
 ```
 
-You can use this error directly when replying to requests using the [modbus-stream](https://github.com/dresende/node-modbus-stream) module.
+You can use this error directly when replying to requests using the [stream](https://github.com/node-modbus/stream) module.
