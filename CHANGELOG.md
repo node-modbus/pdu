@@ -1,3 +1,8 @@
+## 1.10.0 - 26 Jun 2017
+
+- read-coils: fixes not properly throwing when replying to coils with null/undef
+- readme: fixes link to stream module
+
 ## 1.9.0 - 23 Jun 2017
 
 - fixes function code for read-write-multiple-registers :(
