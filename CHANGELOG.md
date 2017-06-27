@@ -1,3 +1,7 @@
+## 1.11.0 - 27 Jun 2017
+
+- modbus: properly check for a valid object and not null
+
 ## 1.10.0 - 26 Jun 2017
 
 - read-coils: fixes not properly throwing when replying to coils with null/undef
