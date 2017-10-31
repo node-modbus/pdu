@@ -1,8 +1,8 @@
 var assert = require("assert");
 var Help   = require("../help");
 
-describe("Parse Device Identification", function () {
-	it("should be [ type, id ] => [ type, conformity, more, next, object, objext, .. ]", function () {
+describe("Read Device Identification", function () {
+	it("should be [ type, id ] => [ type, conformity, more, next, object, object, .. ]", function () {
 		for (var i = 0; i < Help.trials; i++) {
 			var type       = "BasicDeviceIdentification";
 			var id         = "MajorMinorRevision";
