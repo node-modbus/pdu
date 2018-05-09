@@ -31,4 +31,18 @@ describe("Read Holding Registers", function () {
 			}
 		}
 	});
+
+	it("should be [ address, quantity ] => buffer", function () {
+		for (var i = 0; i < Help.trials; i++) {
+			var address = Math.round(Math.random() * 100);
+			var blocks  = Help.randomBlock(7);
+
+			assert.deepEqual(
+				{ address : address, quantity : blocks.length },
+				Help.modbus.ReadHoldingRegisters.Request.parse(
+					Help.modbus.ReadHoldingRegisters.Request.build(address, blocks.length)
+				)
+			);
+		}
+	});
 });
