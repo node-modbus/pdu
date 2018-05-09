@@ -1,3 +1,8 @@
+## 1.11.1 - 9 May 2018
+
+- helpers:
+  - adds support to reply directly with a buffer instead of an Array of 2-byte buffers
+
 ## 1.11.0 - 27 Jun 2017
 
 - modbus: properly check for a valid object and not null
