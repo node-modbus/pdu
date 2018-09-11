@@ -62,8 +62,8 @@ console.log(Modbus.Response(new Buffer([ 0x01, 0x01, 0xad ])));
 - `02` IllegalDataAddress
 - `03` IllegalDataValue
 - `04` ServerDeviceFailure
-- `05` ServerDeviceBusy
-- `06` Aknowledge
+- `05` Aknowledge
+- `06` ServerDeviceBusy
 - `08` MemoryParityError
 - `0A` GatewayPathUnavailable
 - `0B` GatewayTargetDeviceFailedToRespond
