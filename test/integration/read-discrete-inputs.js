@@ -19,7 +19,7 @@ describe("Read Discrete Inputs", function () {
 					function () {
 						Help.modbus.ReadDiscreteInputs.Response.build(bits)
 					},
-					/out of (bounds|range)/
+					/(out of bounds|RangeError)/
 				);
 			} else {
 				assert.deepEqual(

@@ -29,7 +29,7 @@ describe("Write File Record", function () {
 					function () {
 						Help.modbus.WriteFileRecord.Request.build(req);
 					},
-					/out of (bounds|range)/
+					/(out of bounds|RangeError)/
 				);
 			} else {
 				assert.deepEqual(
@@ -45,7 +45,7 @@ describe("Write File Record", function () {
 					function () {
 						Help.modbus.WriteFileRecord.Request.build(req);
 					},
-					/out of (bounds|range)/
+					/(out of bounds|RangeError)/
 				);
 			} else {
 				assert.deepEqual(
