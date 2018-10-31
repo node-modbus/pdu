@@ -19,7 +19,7 @@ describe("Read Holding Registers", function () {
 					function () {
 						Help.modbus.ReadHoldingRegisters.Response.build(blocks)
 					},
-					/out of bounds/
+					/out of (bounds|range)/
 				);
 			} else {
 				assert.deepEqual(

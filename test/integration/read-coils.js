@@ -19,7 +19,7 @@ describe("Read Coils", function () {
 					function () {
 						Help.modbus.ReadCoils.Response.build(bits)
 					},
-					/out of bounds/
+					/out of (bounds|range)/
 				);
 			} else {
 				assert.deepEqual(
