@@ -25,7 +25,7 @@ describe("Read File Record", function () {
 					function () {
 						Help.modbus.ReadFileRecord.Request.build(req);
 					},
-					/out of bounds/
+					/(out of bounds|RangeError)/
 				);
 			} else {
 				assert.deepEqual(
@@ -41,7 +41,7 @@ describe("Read File Record", function () {
 					function () {
 						Help.modbus.ReadFileRecord.Response.build(res);
 					},
-					/out of bounds/
+					/(out of bounds|RangeError)/
 				);
 			} else {
 				assert.deepEqual(

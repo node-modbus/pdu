@@ -19,7 +19,7 @@ describe("Read Input Registers", function () {
 					function () {
 						Help.modbus.ReadInputRegisters.Response.build(blocks)
 					},
-					/out of bounds/
+					/(out of bounds|RangeError)/
 				);
 			} else {
 				assert.deepEqual(
