@@ -1,3 +1,7 @@
+## 1.12.0 - 2 Nov 2018
+
+- minor fixes for NodeJS > 8
+
 ## 1.11.1 - 9 May 2018
 
 - helpers:
