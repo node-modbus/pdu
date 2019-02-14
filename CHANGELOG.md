@@ -1,3 +1,10 @@
+## 1.13.0 - 14 Feb 2019
+
+- format:
+  - fixes #6
+- deps:
+  - mocha@5.2.0
+
 ## 1.12.0 - 2 Nov 2018
 
 - minor fixes for NodeJS > 8
