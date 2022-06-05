@@ -1,3 +1,14 @@
+## 1.14.0 - 5 Jun 2022
+
+- modbus: removes fs dependency to load protocol parts (@PBrunot)
+- deps:
+  - mocha@10.0.0
+
+## 1.13.1 - 29 Feb 2019
+
+- deps:
+  - mocha@6.2.0
+
 ## 1.13.0 - 14 Feb 2019
 
 - format:
