@@ -1,3 +1,7 @@
+## 1.14.1 - 26 Apr 2026
+
+- modbus: replace deprecated util.isArray() with Array.isArray() (@KEGustafsson)
+
 ## 1.14.0 - 5 Jun 2022
 
 - modbus: removes fs dependency to load protocol parts (@PBrunot)
